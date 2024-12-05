@@ -34,6 +34,7 @@
             открытьРомToolStripMenuItem = new ToolStripMenuItem();
             p_render = new Panel();
             t_main = new System.Windows.Forms.Timer(components);
+            oFD_loadRom = new OpenFileDialog();
             mS_main.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             // открытьРомToolStripMenuItem
             // 
             открытьРомToolStripMenuItem.Name = "открытьРомToolStripMenuItem";
-            открытьРомToolStripMenuItem.Size = new Size(128, 22);
+            открытьРомToolStripMenuItem.Size = new Size(180, 22);
             открытьРомToolStripMenuItem.Text = "Load Rom";
             открытьРомToolStripMenuItem.Click += LoadRomToolStripMenuItem_Click;
             // 
@@ -71,6 +72,10 @@
             // t_main
             // 
             t_main.Interval = 16;
+            // 
+            // oFD_loadRom
+            // 
+            oFD_loadRom.FileName = "openFileDialog1";
             // 
             // MainForm
             // 
@@ -98,5 +103,6 @@
         private ToolStripMenuItem открытьРомToolStripMenuItem;
         private Panel p_render;
         private System.Windows.Forms.Timer t_main;
+        private OpenFileDialog oFD_loadRom;
     }
 }
