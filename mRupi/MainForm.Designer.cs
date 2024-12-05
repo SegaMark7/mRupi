@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
+            components = new System.ComponentModel.Container();
+            mS_main = new MenuStrip();
             файлToolStripMenuItem = new ToolStripMenuItem();
             открытьРомToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
+            p_render = new Panel();
+            t_main = new System.Windows.Forms.Timer(components);
+            mS_main.SuspendLayout();
             SuspendLayout();
             // 
-            // menuStrip1
+            // mS_main
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
+            mS_main.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem });
+            mS_main.Location = new Point(0, 0);
+            mS_main.Name = "mS_main";
+            mS_main.Size = new Size(624, 24);
+            mS_main.TabIndex = 0;
+            mS_main.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
@@ -53,29 +56,47 @@
             // открытьРомToolStripMenuItem
             // 
             открытьРомToolStripMenuItem.Name = "открытьРомToolStripMenuItem";
-            открытьРомToolStripMenuItem.Size = new Size(180, 22);
+            открытьРомToolStripMenuItem.Size = new Size(128, 22);
             открытьРомToolStripMenuItem.Text = "Load Rom";
             открытьРомToolStripMenuItem.Click += LoadRomToolStripMenuItem_Click;
+            // 
+            // p_render
+            // 
+            p_render.Dock = DockStyle.Fill;
+            p_render.Location = new Point(0, 24);
+            p_render.Name = "p_render";
+            p_render.Size = new Size(624, 417);
+            p_render.TabIndex = 1;
+            // 
+            // t_main
+            // 
+            t_main.Interval = 16;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
+            BackColor = Color.Black;
+            ClientSize = new Size(624, 441);
+            Controls.Add(p_render);
+            Controls.Add(mS_main);
+            MainMenuStrip = mS_main;
             Name = "MainForm";
             Text = "mRubi";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            Load += MainForm_Load;
+            KeyDown += MainForm_KeyDown;
+            mS_main.ResumeLayout(false);
+            mS_main.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private MenuStrip menuStrip1;
+        private MenuStrip mS_main;
         private ToolStripMenuItem файлToolStripMenuItem;
         private ToolStripMenuItem открытьРомToolStripMenuItem;
+        private Panel p_render;
+        private System.Windows.Forms.Timer t_main;
     }
 }
