@@ -32,10 +32,11 @@
             mS_main = new MenuStrip();
             файлToolStripMenuItem = new ToolStripMenuItem();
             открытьРомToolStripMenuItem = new ToolStripMenuItem();
-            p_render = new Panel();
             t_main = new System.Windows.Forms.Timer(components);
             oFD_loadRom = new OpenFileDialog();
+            pictureBox1 = new PictureBox();
             mS_main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // mS_main
@@ -61,14 +62,6 @@
             открытьРомToolStripMenuItem.Text = "Load Rom";
             открытьРомToolStripMenuItem.Click += LoadRomToolStripMenuItem_Click;
             // 
-            // p_render
-            // 
-            p_render.Dock = DockStyle.Fill;
-            p_render.Location = new Point(0, 24);
-            p_render.Name = "p_render";
-            p_render.Size = new Size(624, 417);
-            p_render.TabIndex = 1;
-            // 
             // t_main
             // 
             t_main.Interval = 16;
@@ -76,6 +69,17 @@
             // oFD_loadRom
             // 
             oFD_loadRom.FileName = "openFileDialog1";
+            oFD_loadRom.Filter = "ROM Files|*.rom;*.bin|All Files|*.*";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Location = new Point(0, 24);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(624, 417);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
@@ -83,7 +87,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(624, 441);
-            Controls.Add(p_render);
+            Controls.Add(pictureBox1);
             Controls.Add(mS_main);
             MainMenuStrip = mS_main;
             Name = "MainForm";
@@ -92,6 +96,7 @@
             KeyDown += MainForm_KeyDown;
             mS_main.ResumeLayout(false);
             mS_main.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -101,8 +106,8 @@
         private MenuStrip mS_main;
         private ToolStripMenuItem файлToolStripMenuItem;
         private ToolStripMenuItem открытьРомToolStripMenuItem;
-        private Panel p_render;
         private System.Windows.Forms.Timer t_main;
         private OpenFileDialog oFD_loadRom;
+        private PictureBox pictureBox1;
     }
 }
