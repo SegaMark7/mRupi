@@ -73,7 +73,8 @@ namespace mRubi
                     _config.CartSram = newSram;
                 }
 
-
+                //Initialize the emulator and all of its subprojects
+                Emu.Initialize(_config);
             }
         }
 
