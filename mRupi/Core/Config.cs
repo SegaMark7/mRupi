@@ -4,15 +4,10 @@ public class Config
 {
     public class SystemInfo
     {
-        public CartInfo Cart { get; set; } = new CartInfo();
-        public List<byte> BiosRom { get; set; } = new List<byte>();
-        public List<byte> SoundRom { get; set; } = new List<byte>();
-    }
-
-    public class CartInfo
-    {
-        public List<byte> Rom { get; set; } = new List<byte>();
-        public List<byte> Sram { get; set; } = new List<byte>();
-        public string SramFilePath { get; set; }
+        public byte[] CartRom { get; set; }
+        public byte[] BiosRom { get; set; }
+        public byte[] SoundRom { get; set; }
+        public byte[] CartSram { get; set; }
+        public string CartSramFilePath { get; set; }
     }
 }
